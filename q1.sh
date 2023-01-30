@@ -13,8 +13,7 @@ awk '{for(i=1; i<=NF; i++) if ($i=="Alice") {count++}} END {print "the word Alic
 
 #d
 
-awk '{if (length($0) > max) max = length($0)} END {print "the largest row has " max " letters"}' aliceinwonderland.txt
-
+awk '{if (length($0) > max) {max=length($0); line=$0 } } END {print "the largest row has " max " letters \n and the row is \n" line}' aliceinwonderland.txt
 
 #e
 
