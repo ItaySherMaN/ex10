@@ -1,0 +1,1 @@
+awk '{for (i=1;i<=NF;i++) {if ($i!=" ") print $i }}' aliceinwonderland.txt | tr -d '[:punct:]'  | tr [:upper:] [:lower:] | sort | uniq -c | sort -n -k1  | tail -6  | awk '{print $2}' | awk 'NR==1;NR==2;NR==3;NR==4;NR==6 {print $0}'
